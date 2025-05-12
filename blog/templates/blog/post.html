@@ -1,4 +1,9 @@
-<article class="post">
+{% extends "global/base.html" %}
+
+{% block texto %}{{text}}{% endblock texto %}
+
+{% block posts %}
+    <article class="post single_post">
     <header>
         <h1 class="post__title"></h1>
         <a href="{% url "blog:post" post.id %}">{{post.title}}</a>
@@ -8,4 +13,6 @@
         <p>{{post.body}}</p>
     </div>
 
-</article>
+    </article>
+   
+{% endblock posts %}
